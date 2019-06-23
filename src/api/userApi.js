@@ -1,15 +1,14 @@
 import 'whatwg-fetch';
 import getBaseUrl from './baseUrl';
 
-const baseUrl = getBaselUrl();
+const baseUrl = getBaseUrl();
 
 export function getUsers() {
   return get('users');
 }
 
 export function deleteUsers(id) {
-  return del('users/${id}');
-
+  return del(`users/${id}`);
 }
 
 function get(url) {
