@@ -10,7 +10,7 @@ export default {
   noInfo: false,
   entry: {
     vendor: path.resolve(__dirname, 'src/vendor'),
-    main: path.resolve(__dirname, 'src/vendor')
+    main: path.resolve(__dirname, 'src/index')
   },
   target: 'web',
   output: {
@@ -30,6 +30,7 @@ export default {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
     }),
+
     // Create HTML file that includes reference to bundled JS.
     new HtmlWebpackPlugin({
       template: 'src/index.html',
@@ -46,7 +47,7 @@ export default {
         minifyURLs: true
       },
       inject: true,
-              // Properties you define here are available in index.html
+      // Properties you define here are available in index.html
       // using htmWebpackPlugin.options.varName
       trackJSToken: '76d7fff9db3641f4852fe3cd516ba5f6'
     }),
